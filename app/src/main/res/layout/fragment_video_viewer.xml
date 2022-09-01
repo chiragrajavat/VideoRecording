@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:id="@+id/view_viewer_container"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <VideoView
+        android:id="@+id/video_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintVertical_weight="1"
+        android:layout_gravity="center|center"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_record"/>
+
+    <ImageView
+        android:id="@+id/img_record"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:src="@drawable/re_record_ic"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintBottom_toTopOf="@+id/txt_submit"/>
+    <FrameLayout
+        android:id="@+id/fm_submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/img_record"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/img_record"
+        app:layout_constraintTop_toTopOf="@+id/img_record">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/circle_background"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/img_submit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_forward"
+            android:layout_gravity="center"
+             />
+    </FrameLayout>
+
+
+
+    <TextView
+        android:id="@+id/txt_reRecord"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="Re-Record"
+        app:layout_constraintHorizontal_weight=".5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_record"
+        app:layout_constraintEnd_toStartOf="@+id/txt_submit"
+        app:layout_constraintStart_toStartOf="@+id/img_record"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/txt_submit"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="Submit"
+        app:layout_constraintHorizontal_weight=".5"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_reRecord"
+        app:layout_constraintTop_toTopOf="@+id/txt_reRecord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_reRecord"
+        app:layout_constraintStart_toStartOf="@+id/fm_submit"
+        android:gravity="center"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_viewer_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    </LinearLayout>
+-->
+
+
+<!--
+</RelativeLayout>-->

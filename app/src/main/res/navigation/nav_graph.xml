@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/permissions_fragment">
+    <fragment
+        android:id="@+id/permissions_fragment"
+        android:name="com.ps.videorecordingdemo.fragment.PermissionsFragment"
+        android:label="Permissions" >
+
+        <action
+            android:id="@+id/action_permissions_to_capture"
+            app:destination="@id/capture_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/capture_fragment"
+        android:name="com.ps.videorecordingdemo.fragment.CaptureFragment"
+        android:label="Capture" >
+
+        <action
+            android:id="@+id/action_capture_to_permissions"
+            app:destination="@id/permissions_fragment" />
+        <action
+            android:id="@+id/action_capture_to_video_viewer"
+            app:destination="@id/video_viewer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/video_viewer"
+        android:name="com.ps.videorecordingdemo.fragment.VideoViewerFragment"
+        android:label="fragment_video_viewer"
+        tools:layout="@layout/fragment_video_viewer" >
+        <argument
+            android:name="uri"
+            app:argType="android.net.Uri" />
+
+        <action
+            android:id="@+id/action_video_viewer_to_capture"
+            app:destination="@id/capture_fragment" />
+    </fragment>
+
+</navigation>
